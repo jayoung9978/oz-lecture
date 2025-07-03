@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko ">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form 입력 관련 태그</title>
+    </head>
+    <body>
+        <form action="/sumbit" method="get"> <!-- GET = 주소에 정보를 포함하여 보내는 방식-->
+            <input type="text" name="username" placeholder="사용자 이름"> <!-- type="text" 텍스트 입력칸, placeholder="사용자 이름" 칸에 회색으로 설명표시-->
+            <input type="password" name="password" placeholder="비밀번호">
+            <br>
+            <div>
+                <h3>취미를 선택해주세요</h3>
+                <input type="checkbox" name="hobby" value="reading">독서
+                <input type="checkbox" name="hobby" value="gaming">게임
+            </div>
+            <div>
+                <h3>성별을 선택해주세요</h3>
+                <input type="radio" name="gender" value="male">남성
+                <input type="radio" name="gender" value="female">여성
+            </div>
+            <div>
+                <h3>도시를 선택해주세요</h3>
+                <select name="city" multiple>
+                    <option value="seoul">서울</option>
+                    <option value="busan">부산</option>
+                    <option value="incheon">인천</option>
+                    <option value="daegu">대구</option>
+                    <option value="gwangju">광주</option>
+                </select>
+                    
+            </div>
+            <hr>
+            <div>
+                <h3>기타정보</h3>
+                <input type="email" name="email" placeholder="이메일을 입력하세요.">
+                <input type="date" name="birthdate" placeholder="생일을 입력하세요.">
+                <input type="number" name="age" min="1" max="120">
+                <input type="range" name="volume" min="0" max="100"> <!--볼륨바-->
+                <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="전화번호를 입력하세요. (예: 010-1234-5678)">
+                <input
+                    type="url"
+                    name="url"
+                    placeholder="https://example.com"
+                    pattern="https://.*"
+                    size="30"
+                    required />
+            </div>
+
+            <p>Choose your monster's color:</p>
+            <div>
+                <input type="color" id="head" name="heat" value="#e66465">
+                <label for="head">Head</label>
+            </div>
+            <div>
+                <input type="color" id="body" name="body" value="#f6b73c">
+                <label for="head">Head</label>
+            </div>
+            <br>
+            <button type="submit">제출</button>
+            <button type="reset">초기화</button>
+        
+        </form>
+    </body>
+
+</html>
+

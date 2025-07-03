@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>User Registration Form</title>
+    <javascript>
+        function updateValue() {
+            let slider = document.getElementById("myRange");
+            let output = document.getElementById("rangeValue");
+            output.innerHTML = slider.value;
+        }
+    </javascript>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form action="#" method="POST">
+        <div>
+            <label for="name">Name:</label> <input type="text" id="name" name="name"><br><br>
+            <label for="email">e-mail:</label> <input type="email" id="email" name="email"><br><br>
+            <label for="password">password:</label> <input type="password" id="password" name="password"><br><br>
+        </div>
+        <div>
+            <label for="date">date:</label> <input type="date" id="date" name="date"><br><br>
+            <label for="age">age:</label> <input type="number" id="age" name="age" min="18" max="100"><br><br>
+            <label for="range">Customer Satisfaction:</label> <input type="range" id="range" name="range" min="1" max="10" value="5" id="myRange" oninput="updateValue()"><br><br>
+            <datalist id="tickmarks">
+                <option value="0" label="0"></option>
+                <option value="25" label="25"></option>
+                <option value="50" label="50"></option>
+                <option value="75" label="75"></option>
+                <option value="100" label="100"></option>
+            </datalist>
+            <span id="rangeValue">50</span>
+        </div>
+        <label for="radio">Male:</label> <input type="radio" id="radio" name="radio"><br><br>
+        <label for="radio">Female:</label> <input type="radio" id="radio" name="radio"><br><br>
+        <label for="radio">Other:</label> <input type="radio" id="radio" name="radio"><br><br>
+    </form>
+    
+</body>
+</html>

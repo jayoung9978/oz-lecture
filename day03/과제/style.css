@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 20px;
+}
+
+p.form-group {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;  
+}
+
+body {
+  background-color: f0f0f0;
+  font-family: arial, sans-serif;
+}
+
+#registration-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* 사용자 기본정보 */
+.info {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.info > [id^="user-"] {
+  padding: 10px;
+}
+
+.volume {
+  font-size: 10px;
+}
+
+/* 제출,초기화버튼 */
+button{
+  background-color: #6e859d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+form p {
+  padding: 5px;
+}
+
+form > p {
+  border-bottom: 1px solid #eee;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  padding: 5px;
+}
+
+/* 국가 선택 트롭다운메뉴를 국가명길이에 따라 자동으로 조절 */
+select {
+  min-width: 100px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+span{
+  font-size: 10px;
+}
+
+canvas {
+  width: 300;
+  height: 150;
+  border: 1px solid #000000;
+}
+
+article {
+  margin: 5px;
+}
+
+aside {
+  margin: 5px;
+}
+
+footer {
+  font-size: 10px;
+  color: gray;
+  
+}
+/* 도전과제(선택). 가상클래스 */
+button:hover {
+  background-color: rgb(7, 198, 122);
+}
+
+form > div > p:first-child {
+  margin-top: 20px;
+}
+
+select:hover {
+  border-color: #980202;;
+}
+
+select option:first-child{
+  font-weight: bold;
+}
+
+/* 도전과제(선택) 가상요소 */
+/* 큰 제목과 치킨 사이에  */
+h1::after {
+  content: "🍗";
+  margin-left: 10px;
+}
+
+.form-group::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #ddd;
+  margin-top: 10px;
+}
+
+/* 기본정보칸 필수입력표시 */
+[for^="basic-user-"]::after {
+  content: "*";
+  color: red;
+}

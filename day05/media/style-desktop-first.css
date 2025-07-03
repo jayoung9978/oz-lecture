@@ -1,0 +1,50 @@
+html {
+	font-size: 16px; /* 기본 폰트 크기 설정 */
+}
+body {
+	margin: 0;
+	font-family: arial, sans-serif;
+}
+h1 {
+	text-align: center;
+	padding: 2rem; /* 32px */
+	background-color: lightblue;
+}
+main {
+	padding: 1rem; /* 16px */
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3열 그리드 */
+	gap: 1rem; /* 16px */
+	box-sizing: border-box;
+}
+.box {
+	padding: 1rem; /* 16px */
+	margin-bottom: 1rem; /* 16px */
+	background-color: lightcoral;
+	text-align: center;
+	box-sizing: border-box;
+}
+/* 태블릿: 768px 이상 */
+@media (max-width: 1023px) {
+	main {
+		grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
+	}
+	.box {
+		width: calc(50% - 0.5rem); /* 50% - 8px */
+	}
+}
+/* 모바일 767px 이상 */
+@media (max-width: 1024px) {
+	main {
+		width: calc(33% - 0.7rem); /* 33% - 12px */
+	}
+}
+
+/* 1rem= 1px(기본사이즈 기준) x1
+     2rem= 1px(기본사이즈 기준) x2
+     1em= 1px(부모사이즈 기준) x1
+     2em= 1px(부모사이즈 기준) x2
+1vw = 브라우저 전체너비의 1%
+     1vh = 브라우저 전체높이의 1% 
+     1vmax= vh 와 vw 중 큰것과 같다
+     1vmin= vh 와 vw 중 작은것과 같다 */

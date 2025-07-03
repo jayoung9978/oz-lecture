@@ -1,0 +1,77 @@
+header {
+	/* box모델 */
+	padding: 20px;
+	border-bottom: 2px solid #333;
+	margin-bottom: 20px;
+	/* position 속성: */
+	/* 스크롤 시 상단에 고정 */
+	position: sticky;
+	top: 0;
+}
+body {
+	max-width: 1200px;
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+}
+/* text-decoration: none;은 링크의 밑줄을 제거 */
+a {
+	text-decoration: none;
+	color: #007bff;
+}
+h1 {
+	font-size: 2em;
+}
+h2 {
+	font-size: 1.5em;
+}
+h3 {
+	font-size: 1.2em;
+}
+.project {
+	/* box모델 */
+	padding: 15px;
+	border: 1px solid #ccc;
+	margin: 20px;
+}
+aside {
+	/* box모델 */
+	padding: 10px;
+	border-left: 3px solid #007bff;
+	margin: 20px;
+	/* position 속성: */
+	/* 메뉴우측에 위치함 */
+	position: relative;
+}
+aside h3 {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+/* 내비게이션 메뉴를 가로로 배치 */
+nav ul {
+	/* flexbox:
+        메뉴를 고르게 배치 */
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+/* 메뉴 항목을 가로 정렬(리스트마크 제거됨) */
+nav ul li {
+	display: inline-block;
+}
+/* display: none;으로 적용시 화면에서 숨김(선택 사항) */
+footer p:first-child {
+	display: none;
+}
+/*  */
+#projects {
+	/* flexbox:
+        프로젝트 카드를 유연하게 배치 */
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	/* grid: 프로젝트를 그리드 형태로 배치 */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+}

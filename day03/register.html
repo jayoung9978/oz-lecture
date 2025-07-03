@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>User Registration Form</title>
+        <style>
+        </style>
+        <link rel="stylesheet" href="style.css" /> <!-- 외부 CSS 파일 링크 -->
+        
+    </head>
+    <body>
+        <header>
+            <h1>User Registration</h1> <!-- 페이지 제목 -->
+            <hr>
+            <nav> <!-- 네비게이션 바 -->
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Register">Register</a></li>
+                    <li><a href="#About">About</a></li>
+                    
+                </ul>
+            </nav>
+            
+            <div><!-- SVG 태그를 사용하여 원형 그래픽을 추가 -->
+                <svg width="50" height="100">
+                    <circle cx="25" cy="50" r="10" stroke="black" stroke-width="2" fill="red" />
+                    <!--벡터이미지(깨지지않는) size 100*100 (가로세로길이),
+                    circle = 원형모양, cx=이미지의 중심으로부터 좌우 위치 (사이즈가 100이므로 50이 중심),
+                    cy=이미지의 중심으로부터 상하 위치,
+                    r=원의 크기 반지름(원주율), stroke-width= 테두리 두께, fill=이미지의 색상 -->
+                </svg>
+                <svg width="50" height="100">
+                    <circle cx="25" cy="50" r="10" stroke="black" stroke-width="2" fill="yellow" />
+                </svg>
+                <svg width="50" height="100">
+                    <circle cx="25" cy="50" r="10" stroke="black" stroke-width="2" fill="green" />
+                </svg>
+                <svg width="50" height="100">
+                    <circle cx="25" cy="50" r="10" stroke="black" stroke-width="2" fill="blue" />
+                </svg>
+                <svg width="50" height="100">
+                    <circle cx="25" cy="50" r="10" stroke="black" stroke-width="2" fill="purple" />
+                </svg>
+            </div>
+            
+        </header>
+        
+        <hr>
+        <main> <!-- 메인 컨텐츠 영역 -->
+            <section>
+                <h2>Registration Form</h2> <!-- 섹션 제목 -->
+                <br>
+                <form action="#" method="POST" id="registration-form"> <!--사용자 입력정보 받는 폼 시작-->
+                    <div>
+                        <h3>사용자 정보</h3> <!-- 사용자 정보 입력 -->
+                        <label for="name">name: <input type="text"  id="user-name" name="name"></label> <!-- 사용자 이름 -->
+                        <label for="password">password: <input type="password" id="user-password" name="password" ></label> <!-- 사용자 비밀번호 -->
+                        <label for="email">email: <input type="email" id="user-email" name="email"></label><br> <!-- 이메일 입력 -->
+                    </div>
+                    <div>
+                        <h3>추가 정보</h3> <!-- 추가 정보 입력 -->
+                        
+                        <label for="date">date: <input type="date" id="date" name="date"></label><br> <!-- 날짜 입력 -->
+                        <label for="number">number: <input type="number" id="number" name="number" min="18" max="100" placeholder="나이"></label> <!-- 숫자 입력, 최소 18세, 최대 100세 -->
+                    </div>
+                    <div>
+                        <h3>성별을 선택해주세요</h3> <!-- 성별 선택 -->
+                        <label for="gender"><input type="radio" id="gender" name="gender">Male</label>
+                        <label for="gender"><input type="radio" id="gender" name="gender">Female</label>
+                        <label for="gender"><input type="radio" id="gender" name="gender">Other</label>
+                    </div>
+                    <div>
+                        <h3>관심사를 선택해주세요</h3> <!-- 관심사 선택 -->
+                        <label for="hobby"><input type="checkbox" id="hobby-Gaming" name="hobby" placeholder="">Gaming</label>
+                        <label for="hobby"><input type="checkbox" id="hobby-Coding" name="hobby" placeholder="">Coding</label>
+                        <label for="hobby"><input type="checkbox" id="hobby-Reading" name="hobby" placeholder="">Reading</label>
+
+                    </div>
+                    <div>
+                        <h3>국가를 선택해주세요</h3> <!-- 국가 선택 -->
+                        <label for="city">국가 선택:</label>
+                            <select name="city"> <!-- 드롭다운 메뉴 -->
+                                <option value="kr">한국</option>
+                                <option value="USA">미국</option>
+                                <option value="Japan">일본</option>
+                                <option value="China">중국</option>
+                                <option value="UK">영국</option>
+                            </select>
+                    </div>
+                    <div> 
+                        <label for="range">서비스 만족도: <input type="range" name="volume" min="1" max="10"><span  style="color:gray">1부터 10점까지</span></label> <!-- 서비스 만족도 입력, 1부터 10까지의 범위 바 -->
+                    </div>
+                    <br>
+                    
+                    <div> <!-- 입력받은 정보 제출 및 초기화 버튼 -->
+                        <button type="submit">제출</button> 
+                        <button type="reset">초기화</button>
+                    </div>
+                </form> <!--사용자 입력정보 받는 폼 종료-->
+                    
+            </section>
+            <hr>
+            <article> <!-- 사용자 등록의 목적이나 안내문구 설명하는 곳 -->
+                <p class="form-group">Why Register? Registering allows you to access exclusive features...</p>
+            </article>
+            <hr>
+            <aside id="left-sidebar"><!-- 페이지 측면에 관련 정보(예: "Registration Tips" 또는 "Contact Support")를 포함하는 사이드바 -->
+                <div> 
+                    <h4>Registration Tips</h4>
+                    <p class="form-group">Make sure to fill out all required fields.</p>
+                    <h4>Contact Support</h4>
+                    <p class="form-group">If you have any issues, please contact our support team at </p>
+                </div>
+                <canvas id="myCanvas" width="800" height="100" style="border:1px solid #000000;"></canvas>
+            </aside>
+        </main>
+        <hr>
+        <hr>
+        
+        <footer> <!-- 페이지 하단에 저작권 정보와 연락처 링크 -->
+            &copy; 2025 Your Website
+
+        </footer>           
+    </body>
+</html>
+
