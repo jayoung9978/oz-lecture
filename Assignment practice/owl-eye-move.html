@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>마우스를 따라다니는 부엉이</title>
+		<style>
+			/* 기본 스타일 및 어두운 배경 설정 */
+			body {
+				background-color: #0d1a26; /* 깊은 밤하늘 색 */
+				color: #e0e0e0;
+				font-family: "Malgun Gothic", sans-serif;
+				margin: 0;
+				padding: 0;
+				/* 긴 스크롤을 만들기 위한 높이 */
+				height: 300vh;
+				overflow-x: hidden;
+				cursor: url("이미지 경로.png"), auto; /* auto는 이미지가 없을때 기본커서 적용*/
+			}
+
+			/* 콘텐츠 컨테이너 스타일 */
+			.content {
+				padding: 40px;
+				max-width: 800px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			.content h1 {
+				font-size: 3rem;
+				color: #ffffff;
+				text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+			}
+
+			.content p {
+				font-size: 1.1rem;
+				line-height: 1.8;
+			}
+
+			/* 부엉이 컨테이너 - 화면에 고정 */
+			.owl-container {
+				position: fixed; /* 스크롤해도 위치 고정 */
+				bottom: 20px;
+				right: 20px;
+				width: 200px;
+				height: 200px;
+				z-index: 1000; /* 다른 요소들보다 위에 표시 */
+				pointer-events: none; /* 부엉이 위로 마우스 이벤트가 지나가도록 설정 */
+			}
+
+			/* 부엉이 SVG 스타일 */
+			#owl {
+				width: 100%;
+				height: 100%;
+			}
+
+			/* 눈동자 스타일 - 부드러운 움직임을 위한 transition */
+			.pupil {
+				transition: transform 0.1s ease-out;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 화면에 고정될 부엉이 -->
+		<div class="owl-container">
+			<svg id="owl" viewBox="0 0 100 100">
+				<!-- 나뭇가지 -->
+				<path d="M 0 50 Q 50 85, 100 95 L 100 100 L 0 100 Z" fill="#6F4E37" />
+				<!-- 몸통 -->
+				<path
+					d="M 50 20 C 20 20, 10 50, 10 70 C 10 90, 40 95, 50 95 C 60 95, 90 90, 90 70 C 90 50, 80 20, 50 20 Z"
+					fill="#5C4033"
+				/>
+				<!-- 얼굴 -->
+				<circle cx="50" cy="45" r="25" fill="#8E6A55" />
+				<!-- 왼쪽 눈 흰자 -->
+				<circle cx="38" cy="45" r="10" fill="white" />
+				<!-- 왼쪽 눈동자 -->
+				<circle
+					id="left-pupil"
+					class="pupil"
+					cx="38"
+					cy="45"
+					r="5"
+					fill="black"
+				/>
+				<!-- 오른쪽 눈 흰자 -->
+				<circle cx="62" cy="45" r="10" fill="white" />
+				<!-- 오른쪽 눈동자 -->
+				<circle
+					id="right-pupil"
+					class="pupil"
+					cx="62"
+					cy="45"
+					r="5"
+					fill="black"
+				/>
+				<!-- 부리 -->
+				<polygon points="48,55 52,55 50,60" fill="orange" />
+			</svg>
+		</div>
+
+		<!-- 스크롤 가능한 콘텐츠 -->
+		<div class="content">
+			<h1>안녕하세요!</h1>
+			<p>화면 오른쪽 아래에 귀여운 부엉이가 있습니다.</p>
+			<p>
+				마우스를 움직여 보세요. 부엉이의 눈동자가 마우스 커서를 따라 움직입니다.
+			</p>
+			<p>
+				페이지를 아래로 스크롤해도 부엉이는 항상 같은 자리에 머물러 있을 거예요.
+			</p>
+			<br /><br />
+			<p>
+				이 웹페이지는 HTML, CSS, 그리고 JavaScript를 사용하여 만들어졌습니다.
+			</p>
+			<p>
+				CSS의 'position: fixed;' 속성을 사용하여 부엉이를 화면에 고정시켰고,
+			</p>
+			<p>
+				JavaScript의 'mousemove' 이벤트를 감지하여 마우스의 좌표를 계산한 후,
+			</p>
+			<p>SVG로 만들어진 부엉이 눈동자의 위치를 동적으로 변경하고 있습니다.</p>
+			<br /><br />
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+				Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies
+				sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius
+				a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy
+				molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+				Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium
+				a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra
+				tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede.
+				Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit
+				sodales. Vestibulum ante ipsum primis in faucibus orci luctus et
+				ultrices posuere cubilia Curae; Aliquam nibh.
+			</p>
+			<br /><br />
+			<p>
+				Maecenas ac massa. Etiam et magna. Morbi ut mi. Sed id quam. Phasellus
+				faucibus. Class aptent taciti sociosqu ad litora torquent per conubia
+				nostra, per inceptos hymenaeos. Curabitur tempus. Vestibulum in ante.
+				Vivamus nec massa. Cras dapibus. Vivamus consectetuer, lectus at
+				volutpat viverra, magna sem interdum ligula, non sodales dui ligula et
+				nunc. Proin nonummy, magna vitae lacinia laoreet, quam ante commodo
+				nulla, vitae bibendum justo quam quis sem. Mauris rhoncus. Quisque
+				lacus. Suspendisse nisl. Sed elementum, felis ut rhoncus adipiscing,
+				elit risus interdum eros, sit amet luctus est est ut dolor.
+			</p>
+		</div>
+
+		<script>
+			// 마우스 움직임에 따라 눈동자를 움직이는 스크립트
+			document.addEventListener("mousemove", (e) => {
+				// 눈동자 요소들을 가져옵니다.
+				const leftPupil = document.getElementById("left-pupil");
+				const rightPupil = document.getElementById("right-pupil");
+
+				// 눈동자를 움직이는 함수
+				const moveEye = (pupil, eyeCenterX, eyeCenterY) => {
+					// 마우스의 현재 위치
+					const mouseX = e.clientX;
+					const mouseY = e.clientY;
+
+					// 눈의 중심과 마우스 위치 사이의 각도(라디안)를 계산합니다.
+					const angle = Math.atan2(mouseY - eyeCenterY, mouseX - eyeCenterX);
+
+					// 눈동자가 움직일 최대 반경을 설정합니다. (눈 흰자 반경 - 눈동자 반경)
+					const radius = 5;
+
+					// 각도와 반경을 사용하여 눈동자의 새로운 x, y 좌표를 계산합니다.
+					const x = radius * Math.cos(angle);
+					const y = radius * Math.sin(angle);
+
+					// 계산된 위치로 눈동자를 이동시킵니다.
+					pupil.style.transform = `translate(${x}px, ${y}px)`;
+				};
+
+				// 각 눈의 중심 좌표를 계산하고 함수를 호출합니다.
+				// getBoundingClientRect()는 뷰포트에서의 요소 위치와 크기를 반환합니다.
+				const leftEyeRect = leftPupil.parentElement
+					.querySelector("circle:nth-of-type(1)")
+					.getBoundingClientRect();
+				const rightEyeRect = rightPupil.parentElement
+					.querySelector("circle:nth-of-type(3)")
+					.getBoundingClientRect();
+
+				// 왼쪽 눈의 중심 좌표
+				const leftEyeCenterX = leftEyeRect.left + leftEyeRect.width / 2;
+				const leftEyeCenterY = leftEyeRect.top + leftEyeRect.height / 2;
+
+				// 오른쪽 눈의 중심 좌표
+				const rightEyeCenterX = rightEyeRect.left + rightEyeRect.width / 2;
+				const rightEyeCenterY = rightEyeRect.top + rightEyeRect.height / 2;
+
+				// 각 눈동자를 움직입니다.
+				moveEye(leftPupil, leftEyeCenterX, leftEyeCenterY);
+				moveEye(rightPupil, rightEyeCenterX, rightEyeCenterY);
+			});
+		</script>
+	</body>
+</html>

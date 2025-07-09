@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	border: 0;
+	font-family: Arial, Helvetica, sans-serif;
 }
 body {
 	margin: 20px;
@@ -15,24 +16,46 @@ section {
 	background-color: rgb(243, 243, 243);
 }
 h1 {
-	padding: 0.5rem;
+	padding: 0.3rem;
 	color: rgb(0, 0, 0);
+	text-align: center;
 }
 h2 {
-	padding: 0.5rem;
+	padding: 0.3rem;
 }
 h3 {
-	padding: 0.5rem;
+	padding: 0.3rem;
 }
 p {
-	padding-bottom: 0.5rem;
+	padding: 0.7rem 0.3rem;
+	/* padding-bottom: 0.5rem; */
 }
 p a {
-	box-sizing: 1px;
+	box-sizing: 2rem;
 	border-radius: 5px;
 	background-color: rgb(52, 66, 168);
-	padding: 3px;
+	padding: 0.5rem;
 	color: rgb(236, 236, 236);
 	text-decoration: none;
+	text-align: center;
 }
 /* text-decoration: none; =링크 밑줄없애기 */
+#name {
+	color: #0571fe;
+	text-shadow: 0 0 1.2rem rgb(255, 0, 170);
+	animation: blinker 3s linear infinite; /* 3초 간격으로 무한 반복 */
+}
+@keyframes blinker {
+	20% {
+		opacity: 0; /* 50% 지점에서 투명하게 */
+	}
+}
+
+a {
+	box-sizing: 2rem;
+	border-radius: 0.3rem;
+	background-color: #0571fe;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+}
