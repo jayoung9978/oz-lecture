@@ -1,4 +1,4 @@
-console.log("기본과제\n");
+console.log("--- 기본과제 ---\n");
 
 let inputStr = prompt("점수를 입력하세요.");
 console.log();
