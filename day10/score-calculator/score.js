@@ -3,6 +3,7 @@ console.log("--- 기본과제 ---\n");
 let inputStr = prompt("점수를 입력하세요.");
 console.log();
 let input = parseInt(inputStr);
+// let input = Number(inputStr);
 console.log(input);
 // prompt는 문자열을 반환하므로 parseInt()를 사용해 정수형 숫자로 변환한다.
 
