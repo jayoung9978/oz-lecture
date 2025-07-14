@@ -1,23 +1,34 @@
 <!DOCTYPE html>
-<html lang="ko">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Day13 grt-node</title>
-	</head>
-	<body>
-		<h1 id="title">title</h1>
-		<p class="text">text-1</p>
-		<p class="text">text-2</p>
-	</body>
-	<script>
-		// id 속성값이 title인 요소 노드 1개 선택하기
-		const el = document.getElementById("title"); //el == element
-		console.log(el); // <h1 id="title">title</h1>
-		console.log(typeof el); // object
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Day13 get-node</title>
+  </head>
+  <body>
+    <h1 id="title">title</h1>
+    <p class="text">text-1</p>
+    <p class="text">text-2</p>
+    <input type="email" name="email"></input>
+  </body>
+  <script>
+    // el == element
+    // id 속성값이 title인 요소 노드 1개 선택하기
+    const el = document.getElementById("title"); // 반환값 : 객체 1개
+    console.log(el);
+    console.log(typeof el);
 
-		// class 속성값이 text인 요소 노드 모두 선택하기
-		const classEl = document.getElementsByClassName("text");
-		console.log(classEl); // HTMLCollection(2) [p.text, p.text]
-	</script>
+    // class 속성값이 text인 요소 노드 모두 선택하기
+    const classEls = document.getElementsByClassName("text"); // 반환값 : 여러개의 객체가 담긴 배열 1개
+    console.log(classEls);
+    console.log(classEls[0]);
+    console.log(classEls[1]);
+
+    // name 속성값이 email인 요소 노드 모두 선택
+    const nameEls = document.getElementsByName("email");
+    console.log(nameEls);
+
+    // 태그명이 p인 요소 노드 모두 선택
+    const tagEls = document.getElementsByTagName("p")
+    console.log(tagEls);
+  </script>
 </html>
