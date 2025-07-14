@@ -16,6 +16,14 @@
 			<p id="text">text</p>
 			<p class="hl">하이라이트</p>
 		</div>
+		<div id="items">
+			<p class="item">items1</p>
+			<p class="item">items2</p>
+			<p class="item">items3</p>
+			<p class="item">items4</p>
+			<p class="item">items5</p>
+			<p class="item">items6</p>
+		</div>
 		<script>
 			// 엘레먼트의 스타일 직접 조정
 			// const pEl = document.querySelector("p");
@@ -43,6 +51,21 @@
 			const hrefAttr = document.createAttribute("href");
 			hrefAttr.value = "https://www.ozcodingschool.com";
 			document.querySelector("a").setAttributeNode(hrefAttr); // href 속성노드 붙이기
+
+			// 요소 수정하기
+			aEl.innerLight = "OZ코딩 바로가기"; // aEl의 텍스트 수정하기
+			aEl.textContent = "OZ코딩 바로가기 textContent"; // aEl의 텍스트 수정하기
+
+			// 요소 삭제하기
+			const textEl = document.querySelector("#text");
+			textEl.remove(); // textEl 삭제하기
+
+			// 요소의 부모 찾아가서 삭제하기
+			const items = document.querySelectorAll(".item");
+			console.log(items);
+			console.log(items[0].parentNode); // items[0]의 부모 노드 찾기
+			// items[0].parentNode.replaceChildren(); // items[0]의 부모 노드의 자식 노드 모두 삭제하기
+			items[0].parentNode.removeChild(items[0]); // items[0]의 부모 노드에서 items[0] 삭제하기
 		</script>
 	</body>
 </html>
