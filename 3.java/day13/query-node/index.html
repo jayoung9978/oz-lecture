@@ -10,7 +10,7 @@
 			<p class="text">text-2</p>
 		</article>
 		<article class="box-2">
-			<p class="text">text-1</p>
+			<p class="text">이 문장은 <span class="inner" style="color: blue">파란색</span>을</span> 강조합니다</p>
 			<p class="text">text-2</p>
 		</article>
 		<script>
@@ -38,6 +38,11 @@
 
 			const queryTextEls = document.querySelectorAll(".text");
 			console.log(queryTextEls);
+
+            const box2TextEl = document.querySelectorAll(".box-2 .text:first-child");
+            console.log("textContent: ", box2Text.textContent);
+            console.log("innerHtml: ", box2Text.innerHTML);
+            console.log("innerText: ", box2Text.innerText);
 		</script>
 	</body>
 </html>
