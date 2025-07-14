@@ -7,7 +7,7 @@ movies.push(
 	{ title: "Inception", director: "Nolan", year: 2010, genre: "Sci-Fi" },
 	{ title: "Parasite", director: "Bong", year: 2019, genre: "Drama" },
 	{ title: "", director: "", year: 2024, genre: "Action" }, // 빈 속성 테스트용
-	{ title: "Avatar", director: "", year: 2009, genre: "" } // 빈 속성 테스트용
+	{ title: "Avatar", director: "", year: "", genre: "" } // 빈 속성 테스트용
 );
 
 // 영화 목록 출력 함수 (함수 선언문)
@@ -22,6 +22,7 @@ function printMovies(movies) {
 		if (!movie.title) movie.title = "Unknown";
 		if (!movie.director) movie.director = "Unknown";
 		if (!movie.genre) movie.genre = "Unknown";
+		if (!movie.year) movie.year = "Unknown";
 
 		// 매개변수 기본값 개념 적용 (빈 문자열에 기본값 설정)
 		let title = movie.title || "Unknown";
@@ -59,5 +60,5 @@ function printMovieWithDefaults(
 }
 
 // 빈 영화 객체로 테스트
-let emptyMovie = { title: "", director: "", year: 2024, genre: "" };
+let emptyMovie = { title: "", director: "", year: "", genre: "" };
 printMovieWithDefaults(emptyMovie);
