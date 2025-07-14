@@ -4,6 +4,17 @@
 		<meta charset="UTF-8" />
 		<title>할 일 목록 앱</title>
 		<style>
+			.task-item {
+				display: flex;
+				align-items: center;
+				padding: 10px;
+				border-bottom: 1px solid #ccc;
+			}
+			.task-item span {
+				flex-grow: 1;
+				font-size: 1.2rem;
+			}
+			/* 둥근 완료 버튼 스타일 */
 			.container {
 				max-width: 600px;
 				margin: 20px auto;
@@ -15,9 +26,18 @@
 				padding: 10px;
 				border-bottom: 1px solid #ccc;
 			}
+			/* 둥근 완료 버튼 스타일 */
+			.complete-button {
+				background: none;
+				border: none;
+				font-size: 30px;
+				cursor: pointer;
+				margin-right: 8px;
+				vertical-align: middle;
+			}
 			.completed {
 				text-decoration: line-through;
-				color: #888;
+				color: #aaa;
 			}
 			.delete-button {
 				background-color: #ff4444;
@@ -45,9 +65,7 @@
 				<button id="clearButton">전체 삭제</button>
 			</div>
 			<ul id="taskList">
-				<li class="task-item">
-					<span>사용자가 input에 입력한 값</span><button>삭제</button>
-				</li>
+				<li class="task-item"></li>
 			</ul>
 		</div>
 		<script src="dom-assignment.js"></script>
