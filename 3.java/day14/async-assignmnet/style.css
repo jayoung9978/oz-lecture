@@ -1,0 +1,37 @@
+.container {
+	max-width: 600px;
+	margin-top: 50px;
+	text-align: center;
+}
+#timerDisplay {
+	font-size: 24px;
+	margin-top: 20px;
+}
+.error {
+	color: red;
+}
+#stopwatch {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+.clock-face {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	border: 8px solid #007bff;
+	border-radius: 50%;
+	background: #fff;
+}
+.hand {
+	position: absolute;
+	width: 3px;
+	height: 55px;
+	background: #ff4444;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -100%) rotate(0deg); /* 중심에서 위로 */
+	transform-origin: 50% 100%; /* 중심(아래쪽) 기준 회전 */
+	transition: transform 0.3s cubic-bezier(0.4, 2, 0.2, 1);
+}
