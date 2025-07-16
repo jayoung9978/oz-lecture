@@ -27,23 +27,25 @@ document.getElementById("timerInput").addEventListener("input", function () {
 
 // 타이머 시작 함수 (기본값: 10초)
 function startTimer(seconds = 10) {
-	const timerDisplay = document.getElementById("timerDisplay");
-	const startButton = document.getElementById("startTimer");
-	const secondHand = document.getElementById("secondHand");
+	// seconds는 기본값으로 10초 설정
+	const timerDisplay = document.getElementById("timerDisplay"); // 타이머 출력 영역
+	const startButton = document.getElementById("startTimer"); // 시작 버튼
+	const secondHand = document.getElementById("secondHand"); // 초침 요소
 
 	if (isNaN(seconds) || seconds < 1 || seconds > MAX_TIME) {
-		timerDisplay.textContent = "에러 메세지";
-		timerDisplay.classList.add("error");
+		// 유효하지 않은 입력값 처리
+		timerDisplay.textContent = "에러 메세지"; // 에러 메세지 출력
+		timerDisplay.classList.add("error"); // 에러 클래스 추가
 		return;
 	}
 
-	startButton.disabled = true;
-	timerDisplay.classList.remove("error");
-	timerDisplay.textContent = `타이머 시작: ${seconds}초`;
+	startButton.disabled = true; // 시작 버튼 비활성화
+	timerDisplay.classList.remove("error"); // 에러 클래스 제거
+	timerDisplay.textContent = `타이머 시작: ${seconds}초`; // 타이머 시작 메시지
 
-	const totalMs = seconds * 1000;
-	const startTime = Date.now();
-	secondHand.style.transform = "translate(-50%, -100%) rotate(0deg)";
+	const totalMs = seconds * 1000; // 총 시간(밀리초 단위)
+	const startTime = Date.now(); // 타이머 시작 시간
+	secondHand.style.transform = "translate(-50%, -100%) rotate(0deg)"; // 초침 초기화
 
 	const timerInterval = setInterval(function () {
 		const elapsedMs = Date.now() - startTime;
