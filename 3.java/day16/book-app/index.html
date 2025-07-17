@@ -21,10 +21,110 @@
 				id="bookPrice"
 				placeholder="가격 (원)"
 			/>
+			<input type="text" id="bookISBN" class="book-input" placeholder="ISBN" />
 			<button class="book-button" onclick="addBook()">추가</button>
+
+			<!-- 가격 필터 섹션 -->
+			<div class="filter-section">
+				<h3>가격 필터</h3>
+				<div class="filter-controls">
+					<label>최소 가격:</label>
+					<input type="number" id="minPrice" placeholder="0" />
+					<label>최대 가격:</label>
+					<input type="number" id="maxPrice" placeholder="무제한" />
+					<button onclick="applyPriceFilter()">필터 적용</button>
+					<button onclick="clearFilter()">필터 초기화</button>
+				</div>
+			</div>
+
+			<!-- 선택된 도서 정보 -->
+			<div class="selected-books-info">
+				<h3>선택된 도서 정보</h3>
+				<p>선택된 도서 수: <span id="selectedCount">0</span>권</p>
+				<p>총 가격: <span id="selectedTotal">0</span>원</p>
+			</div>
+
+			<!-- 액션 버튼들 -->
+			<div class="action-buttons">
+				<button class="book-button" onclick="showAllRentalStatus()">
+					대여 상태 보기
+				</button>
+				<button class="book-button" onclick="selectAllBooks()">
+					전체 선택
+				</button>
+				<button class="book-button" onclick="deselectAllBooks()">
+					전체 해제
+				</button>
+				<button class="book-button" onclick="batchRental()">
+					선택 도서 일괄 대여
+				</button>
+				<button class="book-button" onclick="batchReturn()">
+					선택 도서 일괄 반납
+				</button>
+				<button
+					class="book-button"
+					onclick="removeAllBooks()"
+					style="background: #dc3545; color: #fff"
+				>
+					도서 전체 삭제
+				</button>
+			</div>
+
 			<ul class="book-list" id="bookList"></ul>
 			<div id="results"></div>
 		</div>
+
+		<!-- 대여자 정보 모달 -->
+		<div id="rentalModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h3 id="modalTitle">대여자 정보</h3>
+				<input
+					type="text"
+					id="borrowerName"
+					class="modal-input"
+					placeholder="대여자 이름"
+				/>
+				<input
+					type="text"
+					id="borrowerPhone"
+					class="modal-input"
+					placeholder="연락처"
+				/>
+				<input type="date" id="borrowerDate" class="modal-input" />
+				<div class="modal-buttons">
+					<button onclick="confirmRental()">확인</button>
+					<button onclick="closeModal()">취소</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- 일괄 대여 모달 -->
+		<div id="batchRentalModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeBatchModal()">&times;</span>
+				<h3>일괄 대여 정보</h3>
+				<div id="batchBookList"></div>
+				<input
+					type="text"
+					id="batchBorrowerName"
+					class="modal-input"
+					placeholder="대여자 이름"
+				/>
+				<input
+					type="text"
+					id="batchBorrowerPhone"
+					class="modal-input"
+					placeholder="연락처"
+				/>
+				<input type="date" id="batchBorrowerDate" class="modal-input" />
+				<div class="modal-buttons">
+					<button onclick="confirmBatchRental()">일괄 대여 확인</button>
+					<button onclick="closeBatchModal()">취소</button>
+				</div>
+			</div>
+		</div>
+
 		<script src="script.js"></script>
 	</body>
 </html>
